@@ -18,3 +18,11 @@ description_boutique.appendChild(paragraphe);
 
 const blague = document.querySelector("#blague_de_roger_le_sorcier");
 blague.remove();
+
+//Archibald n'est pas là, appelons le !
+
+const appeler_sorcier = document.querySelector("#call_archibald");
+appeler_sorcier.addEventListener("click", callback);
+function callback() {
+  alert("🧙‍♂️ J'arrive, j'arrive Aventurier !");
+}
