@@ -85,3 +85,24 @@ carte_potion1.querySelector(".card-text.description_potion").textContent =
 
 liste_potion.append(carte_potion);
 liste_potion.append(carte_potion1);
+
+//Plus de potions, nous avons besoin de plus de potions !
+
+const formulaire = document.querySelector(".form");
+formulaire.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const FormHtmlElement = formulaire;
+  const formData = new FormData(FormHtmlElement);
+  const nom = formData.get("nom");
+  const prix = formData.get("prix");
+  const description = formData.get("description");
+  const liste_potion = document.querySelector("#liste_potions");
+  const template = document.querySelector("#template_potion");
+  const carte_potion = template.content.cloneNode(true);
+  carte_potion.querySelector(".nom_potion").textContent = nom;
+  carte_potion.querySelector(".prix_potion").textContent = prix;
+  carte_potion.querySelector(".card-text.description_potion").textContent =
+    description;
+  liste_potion.append(carte_potion);
+  formulaire.reset();
+});
